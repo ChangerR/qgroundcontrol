@@ -162,8 +162,8 @@ Rectangle {
                 horizontalAlignment:    Text.AlignHCenter
                 wrapMode:               Text.WordWrap
                 font.pointSize:         ScreenTools.largeFontPointSize
-                text:                   "Connect vehicle to your device and QGroundControl will automatically detect it." +
-                                        (ScreenTools.isMobile ? "" : " Click Firmware on the left to upgrade your vehicle.")
+                text:                   qsTr("Connect vehicle to your device and QGroundControl will automatically detect it.") +
+                                        (ScreenTools.isMobile ? "" : qsTr(" Click Firmware on the left to upgrade your vehicle."))
 
                 onLinkActivated: Qt.openUrlExternally(link)
             }
@@ -251,7 +251,7 @@ Rectangle {
                 setupIndicator:     false
                 checked:            true
                 exclusiveGroup:     setupButtonGroup
-                text:               "Summary"
+                text:               qsTr("Summary")
                 Layout.fillWidth:   true
 
                 onClicked: showSummaryPanel()
@@ -263,7 +263,7 @@ Rectangle {
                 setupIndicator:     false
                 exclusiveGroup:     setupButtonGroup
                 visible:            !ScreenTools.isMobile && _corePlugin.options.showFirmwareUpgrade
-                text:               "Firmware"
+                text:               qsTr("Firmware")
                 Layout.fillWidth:   true
 
                 onClicked: showFirmwarePanel()

@@ -11,6 +11,7 @@
 
 #include <QQmlEngine>
 #include <QtQml>
+#include "QGCApplication.h"
 
 const char* UnitsSettings::unitsSettingsGroupName =     "Units";
 const char* UnitsSettings::distanceUnitsSettingsName =  "DistanceUnits";
@@ -24,6 +25,7 @@ UnitsSettings::UnitsSettings(QObject* parent)
     , _speedUnitsFact(NULL)
 {
     QQmlEngine::setObjectOwnership(this, QQmlEngine::CppOwnership);
+    _translator.load("lang_zh",":/translations");
     qmlRegisterUncreatableType<UnitsSettings>("QGroundControl.SettingsManager", 1, 0, "UnitsSettings", "Reference only");
 }
 
@@ -34,7 +36,8 @@ Fact* UnitsSettings::distanceUnits(void)
         QStringList     enumStrings;
         QVariantList    enumValues;
 
-        enumStrings << "Feet" << "Meters";
+        enumStrings << _translator.translate("UnitsSettings","Feet") << _translator.translate("UnitsSettings","Meters");
+
         enumValues << QVariant::fromValue((uint32_t)DistanceUnitsFeet) << QVariant::fromValue((uint32_t)DistanceUnitsMeters);
         
         FactMetaData* metaData = new FactMetaData(FactMetaData::valueTypeUint32, this);
@@ -57,7 +60,12 @@ Fact* UnitsSettings::areaUnits(void)
         QStringList     enumStrings;
         QVariantList    enumValues;
 
-        enumStrings << "SquareFeet" << "SquareMeters" << "SquareKilometers" << "Hectares" << "Acres" << "SquareMiles";
+        enumStrings << _translator.translate("UnitsSettings","SquareFeet")
+                    << _translator.translate("UnitsSettings","SquareMeters")
+                    << _translator.translate("UnitsSettings","SquareKilometers")
+                    << _translator.translate("UnitsSettings","Hectares")
+                    << _translator.translate("UnitsSettings","Acres")
+                    << _translator.translate("UnitsSettings","SquareMiles");
         enumValues << QVariant::fromValue((uint32_t)AreaUnitsSquareFeet) << QVariant::fromValue((uint32_t)AreaUnitsSquareMeters) << QVariant::fromValue((uint32_t)AreaUnitsSquareKilometers) << QVariant::fromValue((uint32_t)AreaUnitsHectares) << QVariant::fromValue((uint32_t)AreaUnitsAcres) << QVariant::fromValue((uint32_t)AreaUnitsSquareMiles);
 
         FactMetaData* metaData = new FactMetaData(FactMetaData::valueTypeUint32, this);
@@ -79,7 +87,11 @@ Fact* UnitsSettings::speedUnits(void)
         QStringList     enumStrings;
         QVariantList    enumValues;
 
-        enumStrings << "Feet/second" << "Meters/second" << "Miles/hour" << "Kilometers/hour" << "Knots";
+        enumStrings << _translator.translate("UnitsSettings","Feet/second")
+                    << _translator.translate("UnitsSettings","Meters/second")
+                    << _translator.translate("UnitsSettings","Miles/hour")
+                    << _translator.translate("UnitsSettings","Kilometers/hour")
+                    << _translator.translate("UnitsSettings","Knots");
         enumValues << QVariant::fromValue((uint32_t)SpeedUnitsFeetPerSecond) << QVariant::fromValue((uint32_t)SpeedUnitsMetersPerSecond) << QVariant::fromValue((uint32_t)SpeedUnitsMilesPerHour) << QVariant::fromValue((uint32_t)SpeedUnitsKilometersPerHour) << QVariant::fromValue((uint32_t)SpeedUnitsKnots);
 
         FactMetaData* metaData = new FactMetaData(FactMetaData::valueTypeUint32, this);

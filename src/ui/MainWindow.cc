@@ -170,7 +170,7 @@ MainWindow::MainWindow()
 #endif
 
 #ifdef UNITTEST_BUILD
-    QAction* qmlTestAction = new QAction("Test QML palette and controls", NULL);
+    QAction* qmlTestAction = new QAction(tr("Test QML palette and controls"), NULL);
     connect(qmlTestAction, &QAction::triggered, this, &MainWindow::_showQmlTestWidget);
     _ui.menuWidgets->addAction(qmlTestAction);
 #endif
@@ -313,7 +313,7 @@ void MainWindow::_buildCommonWidgets(void)
         const char* pDockWidgetName = rgDockWidgetNames[i];
 
         // Add to menu
-        QAction* action = new QAction(pDockWidgetName, this);
+        QAction* action = new QAction(tr(pDockWidgetName), this);
         action->setCheckable(true);
         action->setData(i);
         connect(action, &QAction::triggered, this, &MainWindow::_showDockWidgetAction);
@@ -350,6 +350,7 @@ bool MainWindow::_createInnerDockWidget(const QString& widgetName)
 {
     QGCDockWidget* widget = NULL;
     QAction *action = _mapName2Action[widgetName];
+
     if(action) {
         switch(action->data().toInt()) {
             case MAVLINK_INSPECTOR:

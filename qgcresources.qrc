@@ -306,4 +306,7 @@
         <file alias="joystickYawLeft.png">resources/calibration/joystick/mode4/joystickYawLeft.png</file>
         <file alias="joystickYawRight.png">resources/calibration/joystick/mode4/joystickYawRight.png</file>
     </qresource>
+    <qresource prefix="/translations">
+        <file>lang_zh.qm</file>
+    </qresource>
 </RCC>

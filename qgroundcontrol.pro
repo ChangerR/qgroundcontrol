@@ -12,7 +12,6 @@ exists($${OUT_PWD}/qgroundcontrol.pro) {
 }
 
 message(Qt version $$[QT_VERSION])
-
 !equals(QT_MAJOR_VERSION, 5) | !greaterThan(QT_MINOR_VERSION, 4) {
     error("Unsupported Qt version, 5.5+ is required")
 }
@@ -1026,3 +1025,177 @@ include(QGCSetup.pri)
 #
 
 include(QGCInstaller.pri)
+
+TRANSLATIONS += lang_zh.ts
+
+DISTFILES += \
+    user_config.pri
+
+lupdate_only{
+    SOURCES += src/AutoPilotPlugins/PX4/AirframeComponent.qml \
+        src/AutoPilotPlugins/PX4/AirframeComponentSummary.qml \
+        src/AnalyzeView/AnalyzeView.qml \
+        src/ui/AppSettings.qml \
+        src/ui/preferences/BluetoothSettings.qml \
+        src/AutoPilotPlugins/PX4/CameraComponent.qml \
+        src/AutoPilotPlugins/PX4/CameraComponentSummary.qml \
+        src/ViewWidgets/CustomCommandWidget.qml \
+        src/ui/preferences/DebugWindow.qml \
+        src/AutoPilotPlugins/Common/ESP8266Component.qml \
+        src/AutoPilotPlugins/Common/ESP8266ComponentSummary.qml \
+        src/VehicleSetup/FirmwareUpgrade.qml \
+        src/FlightDisplay/FlightDisplayViewDummy.qml \
+        src/FlightDisplay/FlightDisplayViewUVC.qml \
+        src/AutoPilotPlugins/PX4/FlightModesComponentSummary.qml \
+        src/ui/preferences/GeneralSettings.qml \
+        src/MissionEditor/GeoFenceEditor.qml \
+        src/AnalyzeView/GeoTagPage.qml \
+        src/VehicleSetup/JoystickConfig.qml \
+        src/ui/preferences/LinkSettings.qml \
+        src/AnalyzeView/LogDownloadPage.qml \
+        src/ui/preferences/LogReplaySettings.qml \
+        src/ui/MainWindowHybrid.qml \
+        src/ui/MainWindowInner.qml \
+        src/ui/MainWindowNative.qml \
+        src/ui/preferences/MavlinkSettings.qml \
+        src/MissionEditor/MissionEditor.qml \
+        src/AutoPilotPlugins/Common/MixersComponent.qml \
+        src/ui/preferences/MockLink.qml \
+        src/ui/preferences/MockLinkSettings.qml \
+        src/MultiVehicle/MultiVehicleView.qml \
+        src/AutoPilotPlugins/Common/MotorComponent.qml \
+        src/QtLocationPlugin/QMLControl/OfflineMap.qml \
+        src/AutoPilotPlugins/PX4/PowerComponent.qml \
+        src/AutoPilotPlugins/PX4/PowerComponentSummary.qml \
+        src/VehicleSetup/PX4FlowSensor.qml \
+        src/AnalyzeView/AnalyzePage.qml \
+        src/QmlControls/AppMessages.qml \
+        src/MissionEditor/CameraSection.qml \
+        src/QmlControls/ClickableColor.qml \
+        src/QmlControls/DropButton.qml \
+        src/QmlControls/ExclusiveGroupItem.qml \
+        src/QmlControls/FactSliderPanel.qml \
+        src/QmlControls/FlightModeDropdown.qml \
+        src/QmlControls/FlightModeMenu.qml \
+        src/MissionEditor/FWLandingPatternMapVisual.qml \
+        src/QmlControls/GuidedBar.qml \
+        src/QmlControls/IndicatorButton.qml \
+        src/QmlControls/JoystickThumbPad.qml \
+        src/ui/toolbar/MainToolBar.qml \
+        src/ui/toolbar/MainToolBarIndicators.qml \
+        src/QmlControls/MissionCommandDialog.qml \
+        src/MissionEditor/MissionItemEditor.qml \
+        src/QmlControls/MissionItemIndexLabel.qml \
+        src/MissionEditor/MissionItemMapVisual.qml \
+        src/MissionEditor/MissionItemStatus.qml \
+        src/MissionEditor/MissionSettingsMapVisual.qml \
+        src/QmlControls/ModeSwitchDisplay.qml \
+        src/QmlControls/MultiRotorMotorDisplay.qml \
+        src/QmlControls/OfflineMapButton.qml \
+        src/QmlControls/ParameterEditor.qml \
+        src/QmlControls/ParameterEditorDialog.qml \
+        src/QmlControls/QGCButton.qml \
+        src/QmlControls/QGCCheckBox.qml \
+        src/QmlControls/QGCColoredImage.qml \
+        src/QmlControls/QGCComboBox.qml \
+        src/QmlControls/QGCFlickable.qml \
+        src/QmlControls/QGCFlickableHorizontalIndicator.qml \
+        src/QmlControls/QGCFlickableVerticalIndicator.qml \
+        src/QmlControls/QGCGroupBox.qml \
+        src/QmlControls/QGCLabel.qml \
+        src/QmlControls/QGCListView.qml \
+        src/QmlControls/QGCMapLabel.qml \
+        src/QmlControls/QGCMobileFileOpenDialog.qml \
+        src/QmlControls/QGCMobileFileSaveDialog.qml \
+        src/QmlControls/QGCMouseArea.qml \
+        src/QmlControls/QGCMovableItem.qml \
+        src/QmlControls/QGCPipable.qml \
+        src/QmlControls/QGCRadioButton.qml \
+        src/QmlControls/QGCSlider.qml \
+        src/QmlControls/QGCTextField.qml \
+        src/QmlControls/QGCToolBarButton.qml \
+        src/QmlControls/QGCView.qml \
+        src/QmlControls/QGCViewDialog.qml \
+        src/QmlControls/QGCViewMessage.qml \
+        src/QmlControls/QGCViewPanel.qml \
+        src/QmlControls/QGroundControl.Controls.qmldir \
+        src/MissionEditor/RallyPointEditorHeader.qml \
+        src/MissionEditor/RallyPointItemEditor.qml \
+        src/QmlControls/RCChannelMonitor.qml \
+        src/QmlControls/RoundButton.qml \
+        src/MissionEditor/SectionHeader.qml \
+        src/AutoPilotPlugins/Common/SetupPage.qml \
+        src/ui/toolbar/SignalStrength.qml \
+        src/MissionEditor/SimpleItemMapVisual.qml \
+        src/QmlControls/SliderSwitch.qml \
+        src/QmlControls/SubMenuButton.qml \
+        src/MissionEditor/SurveyMapVisual.qml \
+        src/QmlControls/VehicleRotationCal.qml \
+        src/QmlControls/VehicleSummaryRow.qml \
+        src/QmlControls/ToolStrip.qml \
+        src/QmlControls/DropPanel.qml \
+        src/ViewWidgets/ViewWidget.qml \
+        src/FactSystem/FactControls/FactBitmask.qml \
+        src/FactSystem/FactControls/FactCheckBox.qml \
+        src/FactSystem/FactControls/FactComboBox.qml \
+        src/FactSystem/FactControls/FactLabel.qml \
+        src/FactSystem/FactControls/FactPanel.qml \
+        src/FactSystem/FactControls/FactTextField.qml \
+        src/FactSystem/FactControls/FactTextFieldGrid.qml \
+        src/FactSystem/FactControls/FactTextFieldRow.qml \
+        src/FactSystem/FactControls/qmldir \
+        src/FlightDisplay/FlightDisplayView.qml \
+        src/FlightDisplay/FlightDisplayViewMap.qml \
+        src/FlightDisplay/FlightDisplayViewVideo.qml \
+        src/FlightDisplay/FlightDisplayViewWidgets.qml \
+        src/FlightDisplay/MultiVehicleList.qml \
+        src/FlightDisplay/qmldir \
+        src/FlightMap/Widgets/CenterMapDropButton.qml \
+        src/FlightMap/Widgets/CenterMapDropPanel.qml \
+        src/FlightMap/Widgets/CompassRing.qml \
+        src/FlightMap/Widgets/MapFitFunctions.qml \
+        src/FlightMap/FlightMap.qml \
+        src/FlightMap/Widgets/InstrumentSwipeView.qml \
+        src/FlightMap/MapScale.qml \
+        src/FlightMap/MapItems/MissionItemIndicator.qml \
+        src/FlightMap/MapItems/MissionItemIndicatorDrag.qml \
+        src/FlightMap/MapItems/MissionItemView.qml \
+        src/FlightMap/MapItems/MissionLineView.qml \
+        src/FlightMap/MapItems/PolygonEditor.qml \
+        src/FlightMap/Widgets/QGCArtificialHorizon.qml \
+        src/FlightMap/Widgets/QGCAttitudeHUD.qml \
+        src/FlightMap/Widgets/QGCAttitudeWidget.qml \
+        src/FlightMap/Widgets/QGCCompassWidget.qml \
+        src/FlightMap/Widgets/QGCInstrumentWidget.qml \
+        src/FlightMap/Widgets/QGCInstrumentWidgetAlternate.qml \
+        src/MissionEditor/QGCMapPolygonControls.qml \
+        src/FlightMap/Widgets/QGCPitchIndicator.qml \
+        src/FlightMap/QGCVideoBackground.qml \
+        src/FlightMap/qmldir \
+        src/FlightMap/Widgets/CameraWidget.qml \
+        src/FlightMap/Widgets/ValuesWidget.qml \
+        src/FlightMap/Widgets/VehicleHealthWidget.qml \
+        src/FlightMap/MapItems/VehicleMapItem.qml \
+        src/FlightMap/Widgets/VibrationWidget.qml \
+        src/QmlControls/QGroundControl.ScreenTools.qmldir \
+        src/QmlControls/ScreenTools.qml \
+        src/QmlControls/QmlTest.qml \
+        src/AutoPilotPlugins/Common/RadioComponent.qml \
+        src/AutoPilotPlugins/PX4/SafetyComponent.qml \
+        src/AutoPilotPlugins/PX4/SafetyComponentSummary.qml \
+        src/AutoPilotPlugins/PX4/SensorsComponent.qml \
+        src/AutoPilotPlugins/PX4/SensorsComponentSummary.qml \
+        src/AutoPilotPlugins/PX4/SensorsComponentSummaryFixedWing.qml \
+        src/ui/preferences/SerialSettings.qml \
+        src/VehicleSetup/SetupParameterEditor.qml \
+        src/VehicleSetup/SetupView.qml \
+        src/MissionEditor/SimpleItemEditor.qml \
+        src/MissionEditor/SurveyItemEditor.qml \
+        src/MissionEditor/FWLandingPatternEditor.qml \
+        src/MissionEditor/MissionSettingsEditor.qml \
+        src/ui/preferences/TcpSettings.qml \
+        src/test.qml \
+        src/ui/preferences/UdpSettings.qml \
+        src/VehicleSetup/VehicleSummary.qml \
+        src/FlightDisplay/VirtualJoystick.qml
+}

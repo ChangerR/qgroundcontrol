@@ -684,3 +684,7 @@ void QGCApplication::setLastKnownHomePosition(QGeoCoordinate& lastKnownHomePosit
     settings.setValue(_lastKnownHomePositionAltKey, lastKnownHomePosition.altitude());
     _lastKnownHomePosition = lastKnownHomePosition;
 }
+
+QTranslator* QGCApplication::getTranslator() {
+    return &translator_;
+}

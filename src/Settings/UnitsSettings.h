@@ -11,6 +11,7 @@
 #define UnitsSettings_H
 
 #include "SettingsGroup.h"
+#include <QTranslator>
 
 class UnitsSettings : public SettingsGroup
 {
@@ -63,6 +64,7 @@ private:
     SettingsFact* _distanceUnitsFact;
     SettingsFact* _areaUnitsFact;
     SettingsFact* _speedUnitsFact;
+    QTranslator _translator;
 };
 
 #endif

@@ -24,6 +24,7 @@
 #include <QUdpSocket>
 #include <QtPlugin>
 #include <QStringListModel>
+#include <QTranslator>
 #include "QGCApplication.h"
 #include "AppMessages.h"
 
@@ -209,6 +210,14 @@ int main(int argc, char *argv[])
     QGCApplication* app = new QGCApplication(argc, argv, runUnitTests);
     Q_CHECK_PTR(app);
 
+    //QTranslator translator;
+
+    if ( app->getTranslator()->load("lang_zh",":/translations") ) {
+        app->installTranslator(app->getTranslator());
+    } else {
+        qDebug() << "Open language file failed";
+    }
+
 #ifdef Q_OS_LINUX
     QApplication::setWindowIcon(QIcon(":/res/resources/icons/qgroundcontrol.ico"));
 #endif /* Q_OS_LINUX */
@@ -246,11 +255,16 @@ int main(int argc, char *argv[])
         }
     } else
 #endif
+    // Add QTranslate
+
     {
+
         if (!app->_initForNormalAppBoot()) {
             return -1;
         }
+
         exitCode = app->exec();
+        qDebug() << "app exit";
     }
 
     app->_shutdown();

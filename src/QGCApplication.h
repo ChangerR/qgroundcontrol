@@ -147,6 +147,8 @@ public:
 
     static QGCApplication*  _app;   ///< Our own singleton. Should be reference directly by qgcApp
 
+    QTranslator* getTranslator();
+
 public:
     // Although public, these methods are internal and should only be called by UnitTest code
 
@@ -193,6 +195,7 @@ private:
 
     /// Unit Test have access to creating and destroying singletons
     friend class UnitTest;
+    QTranslator translator_;
 
 };
 

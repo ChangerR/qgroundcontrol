@@ -1,42 +1,42 @@
 [
 {
     "name":             "voltage",
-    "shortDescription": "Voltage",
+    "shortDescription": "电压",
     "type":             "double",
     "decimalPlaces":    2,
     "units":            "v"
 },
 {
     "name":             "percentRemaining",
-    "shortDescription": "Percent",
+    "shortDescription": "剩余电量",
     "type":             "int32",
     "decimalPlaces":    0,
     "units":            "%"
 },
 {
     "name":             "mahConsumed",
-    "shortDescription": "Consumed",
+    "shortDescription": "消耗",
     "type":             "int32",
      "decimalPlaces":    0,
      "units":            "mAh"
 },
 {
     "name":             "current",
-    "shortDescription": "Current",
+    "shortDescription": "当前",
     "type":             "float",
     "decimalPlaces":    2,
     "units":            "A"
 },
 {
     "name":             "temperature",
-    "shortDescription": "Temperature",
+    "shortDescription": "温度",
     "type":             "int32",
     "decimalPlaces":    2,
     "units":            "C"
 },
 {
     "name":             "cellCount",
-    "shortDescription": "Cell Count",
+    "shortDescription": "Cell数量",
     "type":             "int32",
     "decimalPlaces":    0
 }

@@ -1,21 +1,21 @@
 [
 {
     "name":             "temperature1",
-    "shortDescription": "Temperature (1)",
+    "shortDescription": "温度 (1)",
     "type":             "double",
     "decimalPlaces":    2,
     "units":            "C"
 },
 {
     "name":             "temperature2",
-    "shortDescription": "Temperature (2)",
+    "shortDescription": "温度 (2)",
     "type":             "double",
     "decimalPlaces":    2,
     "units":            "C"
 },
 {
     "name":             "temperature3",
-    "shortDescription": "Temperature (3)",
+    "shortDescription": "温度 (3)",
     "type":             "double",
     "decimalPlaces":    2,
     "units":            "C"
